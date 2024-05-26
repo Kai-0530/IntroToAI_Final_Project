@@ -1,0 +1,15 @@
+Flask==2.0.2
+pytube==12.1.0
+torch==2.1.0
+Werkzeug==3.0.1
+whisper==1.1.10
+-e git+https://github.com/sanchit-gandhi/whisper-jax@45bff9df78a6a4f04144f405c74cf0ffa4c5fb52#egg=whisper_jax
+widgetsnbextension==4.0.9
+wrapt==1.15.0
+wsproto==1.1.0
+youtube-dl==2021.12.17
+claude-api==1.0.17
+claude2==1.1.5
+markdown==3.3.4
+yt-dlp==2023.10.13
+zipp==3.17.0

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transcription Service</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Transcription Service</h1>
+        <form action="{{ url_for('transcribe') }}" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="input_format">Select Input Format</label>
+                <select class="form-control" id="input_format" name="input_format" required>
+                    <option value="mp3">MP3</option>
+                    <option value="m4a">M4A</option>
+                    <option value="youtube">YouTube URL</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="mp3_file">Upload MP3 File</label>
+                <input type="file" class="form-control-file" id="mp3_file" name="mp3_file">
+            </div>
+            <div class="form-group">
+                <label for="m4a_file">Upload M4A File</label>
+                <input type="file" class="form-control-file" id="m4a_file" name="m4a_file">
+            </div>
+            <div class="form-group">
+                <label for="url">YouTube URL</label>
+                <input type="text" class="form-control" id="url" name="url">
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="plain" name="plain" value="true">
+                <label class="form-check-label" for="plain">Plain Text</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="srt" name="srt" value="true">
+                <label class="form-check-label" for="srt">SRT</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="vtt" name="vtt" value="true">
+                <label class="form-check-label" for="vtt">VTT</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="tsv" name="tsv" value="true">
+                <label class="form-check-label" for="tsv">TSV</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="summarize" name="summarize" value="true">
+                <label class="form-check-label" for="summarize">Summarize</label>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Submit</button>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
