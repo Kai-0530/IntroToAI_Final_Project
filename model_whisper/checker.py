@@ -46,11 +46,10 @@ def extract_data(file_path):
     return data_map
 
 # Folder path
-tra_folder_path = 'data_set_output_t'
-#tra_folder_path = 'test_output_t'
+tra_folder_path = 'data_output_w'
 
-# check_file_path = 'Dataset\cv-corpus-17.0-2024-03-15\zh-TW\\validated.tsv'
-check_file_path = 'Dataset\cv-corpus-17.0-2024-03-15\zh-TW\invalidated.tsv'
+check_file_path = 'Dataset\cv-corpus-17.0-2024-03-15\zh-TW\\validated.tsv'
+#check_file_path = 'Dataset\cv-corpus-17.0-2024-03-15\zh-TW\invalidated.tsv'
 
 filenames = [f for f in os.listdir(tra_folder_path) if f.endswith('.txt')]
 
@@ -68,13 +67,13 @@ def process_file(file_name):
     if new_name in result:
         # Calculate
         cer_score = cer(text, result[new_name])
+    
         # Store the result by length
         if cer_score < 1:
             text_length = len(result[new_name])
             if text_length not in cer_by_length:
                 cer_by_length[text_length] = []
             cer_by_length[text_length].append(cer_score)
-
         # print(f"CER: {cer_score:.4f}")
 
 # Multi-threading
@@ -99,8 +98,8 @@ for length, cer_list in sorted_cer_by_length:
     avg_cer = sum(cer_list) / len(cer_list)
     if avg_cer < 1:
         lengths.append(length)
-        #print(length)
-        #print(avg_cer)
+        print(length)
+        print(avg_cer)
         scores.append(1-avg_cer)
         tot_len = tot_len + length
         tot_scores = tot_scores + (1-avg_cer)*length
