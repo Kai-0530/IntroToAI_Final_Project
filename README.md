@@ -13,7 +13,7 @@ We used four models in total. The baseline model, which is a basic CNN with full
 
 0. Baseline: CNN
 1. CNN + LSTM Model
-2. DeepSpeech Model
+2. PaddleSpeech Model
 3. Whisper Model 
 
 ## Application
