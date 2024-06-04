@@ -1,6 +1,5 @@
 # IntroToAI_Final_Project
 **Team:**  YYYYY
-**Team members:**
 
 ## Introduction
 Many people face a common challenge: the abundance of online asynchronous courses in computer science can be overwhelming, and it's hard to keep up with all the content every week. Therefore, for this final project, we aim to create a tool for summarizing key points from speech-to-text conversion, allowing us to quickly grasp the important information even when we don't have time to watch all the online courses.
